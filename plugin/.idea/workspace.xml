@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088b01bc-5be8-4f7d-924f-a70e9a3f17c7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/godwin/debug/ui/ErrorAlertDialog.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/godwin/debug/ui/ErrorAlertDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/godwin/debug/ui/QuerySnapshotWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/godwin/debug/ui/QuerySnapshotWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/common/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/common/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/network/ClientSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/network/ClientSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/network/NetworkConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/network/NetworkConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/network/communication/DataCommunicationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/network/communication/DataCommunicationListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/network/communication/DataObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/network/communication/DataObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/network/communication/ResponseManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/network/communication/ResponseManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/ui/MainWindowWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/ui/MainWindowWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/ui/SessionWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/ui/SessionWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/ui/SessionWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/ui/SessionWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/godwin/debug/ui/autocomplete/QuerySuggestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/godwin/debug/ui/autocomplete/QuerySuggestionService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,8 +91,8 @@
       <file leaf-file-name="MainWindowWidget.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/godwin/debug/ui/MainWindowWidget.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="281">
+              <caret line="66" column="6" lean-forward="true" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -478,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527053603345</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1. Query Snapshot">
+      <created>1527078146563</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527078146563</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -491,8 +484,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32960895" />
@@ -507,14 +499,14 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32849163" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49920255" visible="true" weight="0.17697228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49920255" visible="true" weight="0.17697228" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
       <window_info id="Structure" order="1" sideWeight="0.50079745" side_tool="true" weight="0.26972282" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.45921788" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.45921788" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -555,7 +547,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1. Listing of apps&#10;2. Listing of db and tables&#10;3. querying for database" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Listing of apps&#10;2. Listing of db and tables&#10;3. querying for database" />
+    <MESSAGE value="1. Query Snapshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Query Snapshot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -604,7 +597,7 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>super.getItems(prefix, cached, parameters)</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1017,8 +1010,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/godwin/debug/ui/MainWindowWidget.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="281">
+          <caret line="66" column="6" lean-forward="true" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
