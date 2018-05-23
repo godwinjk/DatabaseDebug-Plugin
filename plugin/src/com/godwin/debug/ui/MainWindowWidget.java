@@ -5,6 +5,7 @@ import com.godwin.debug.model.DDatabase;
 import com.godwin.debug.network.ClientSocket;
 import com.godwin.debug.network.SocketPool;
 import com.godwin.debug.network.communication.DataCommunicationListener;
+import com.godwin.debug.network.communication.DataObserver;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.Project;
 
@@ -40,6 +41,16 @@ public class MainWindowWidget {
 
         @Override
         public void onGetTableDetails(List<List<String>> table, List<String> header) {
+
+        }
+
+        @Override
+        public void onGetQueryResult(List<List<String>> table, List<String> header) {
+
+        }
+
+        @Override
+        public void onGetQueryFail(int errorCode, String errorMessage) {
 
         }
 
@@ -85,6 +96,7 @@ public class MainWindowWidget {
                 });
             }
         });
+        DataObserver.getInstance().subscribe(listener);
     }
 
     private void beautify() {

@@ -40,6 +40,9 @@ class ResponseManagerImpl implements ResponseManager {
             case Common.REQUEST_TABLE_DETAILS:
                 processTableDetails(socket, object);
                 break;
+            case Common.REQUEST_EXECUTE_QUERY:
+                processQuery(socket, object);
+                break;
         }
     }
 
@@ -114,5 +117,33 @@ class ResponseManagerImpl implements ResponseManager {
         header = table.get(0);
         table.remove(0);
         DataObserver.getInstance().publishTable(table, header);
+    }
+
+    private void processQuery(WebSocket socket, JsonObject object) {
+        int responseCode = object.get(Common.RESPONSE_TYPE).getAsInt();
+
+        JsonElement dataElement = object.get(Common.KEY_DATA);
+        JsonElement errorElement = object.get(Common.KEY_ERR);
+        if (dataElement != null) {
+            JsonArray array = dataElement.getAsJsonArray();
+            List<String> header = new ArrayList<>();
+            List<List<String>> table = new ArrayList<>();
+            for (int i = 0; i < array.size(); i++) {
+                JsonObject rowObject = array.get(i).getAsJsonObject();
+                JsonArray rowArray = rowObject.getAsJsonArray(Common.KEY_ROW);
+                List<String> row = new ArrayList<>();
+                for (int j = 0; j < rowArray.size(); j++) {
+                    String data = rowArray.get(j).getAsString();
+                    row.add(data);
+                }
+                table.add(row);
+            }
+            header = table.get(0);
+            table.remove(0);
+            DataObserver.getInstance().publishQueryResult(table, header);
+        } else if (errorElement != null) {
+            JsonObject errorObject = errorElement.getAsJsonObject();
+            DataObserver.getInstance().publishQueryFail(errorObject.get(Common.KEY_ERR_CODE).getAsInt(), errorObject.get(Common.KEY_ERR_MSG).getAsString());
+        }
     }
 }

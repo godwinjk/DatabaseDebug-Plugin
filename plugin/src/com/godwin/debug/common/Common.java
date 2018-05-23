@@ -33,4 +33,7 @@ public interface Common {
     String KEY_VERSION = "keyVersion";
     String KEY_ICON = "keyIcon";
     String KEY_QUERY = "keyQuery";
+    String KEY_ERR = "keyErr";
+    String KEY_ERR_CODE = "keyErrCode";
+    String KEY_ERR_MSG = "keyErrMsg";
 }

@@ -16,5 +16,9 @@ public interface DataCommunicationListener {
 
     void onGetTableDetails(List<List<String>> table, List<String> header);
 
+    void onGetQueryResult(List<List<String>> table, List<String> header);
+
+    void onGetQueryFail( int errorCode,String errorMessage);
+
     void onCloseClient(ClientSocket socket);
 }

@@ -4,6 +4,7 @@ import com.godwin.debug.adb.AdbCommandExecutor;
 import com.godwin.debug.common.Logger;
 import com.godwin.debug.network.communication.CommunicationService;
 import com.godwin.debug.network.communication.DataCommunicationListener;
+import com.godwin.debug.network.communication.DataObserver;
 import com.godwin.debug.network.communication.ResponseManager;
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
@@ -108,6 +109,7 @@ public class NetworkConnectionManager extends WebSocketServer {
     }
 
     private void removeFromRegistry(WebSocket socket) {
+        DataObserver.getInstance().publishSocketClose(SocketPool.getInstance().getClientSocket(socket.getAttachment()));
         SocketPool.getInstance().removeConnection(socket);
     }
 

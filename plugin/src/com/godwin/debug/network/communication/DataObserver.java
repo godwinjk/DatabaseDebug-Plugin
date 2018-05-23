@@ -1,6 +1,7 @@
 package com.godwin.debug.network.communication;
 
 import com.godwin.debug.model.DDatabase;
+import com.godwin.debug.network.ClientSocket;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -65,6 +66,26 @@ public class DataObserver {
         for (int i = 0; i < mListeners.size(); i++) {
             DataCommunicationListener listener = mListeners.get(i);
             listener.onGetTableDetails(table, header);
+        }
+    }
+
+    public void publishQueryResult(List<List<String>> table, List<String> header) {
+        for (int i = 0; i < mListeners.size(); i++) {
+            DataCommunicationListener listener = mListeners.get(i);
+            listener.onGetQueryResult(table, header);
+        }
+    }
+
+    public void publishQueryFail(int errorCode, String errorMessage) {
+        for (int i = 0; i < mListeners.size(); i++) {
+            DataCommunicationListener listener = mListeners.get(i);
+            listener.onGetQueryFail(errorCode, errorMessage);
+        }
+    }
+    public void publishSocketClose(ClientSocket socket){
+        for (int i = 0; i < mListeners.size(); i++) {
+            DataCommunicationListener listener = mListeners.get(i);
+            listener.onCloseClient(socket);
         }
     }
 }

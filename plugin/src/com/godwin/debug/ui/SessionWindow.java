@@ -1,5 +1,6 @@
 package com.godwin.debug.ui;
 
+import com.godwin.debug.common.Logger;
 import com.godwin.debug.model.DDatabase;
 import com.godwin.debug.model.DTable;
 import com.godwin.debug.model.IBaseModel;
@@ -101,6 +102,16 @@ public class SessionWindow {
         }
 
         @Override
+        public void onGetQueryResult(List<List<String>> table, List<String> header) {
+            QuerySnapshotWindow window = new QuerySnapshotWindow(table, header);
+        }
+
+        @Override
+        public void onGetQueryFail(int errorCode, String errorMessage) {
+            ErrorAlertDialog dialog = new ErrorAlertDialog(errorMessage);
+        }
+
+        @Override
         public void onCloseClient(ClientSocket socket) {
 
         }
@@ -187,28 +198,31 @@ public class SessionWindow {
 
         completion.installProvider(provider);
 
-        completion.addKeyListener(new KeyListener() {
+        completion.addDocumentListener(new DocumentListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-
+            public void beforeDocumentChange(DocumentEvent event) {
+//                String text = event.getDocument().getText();
+//                if (text.endsWith(">")) {
+//                    event.getDocument().setText(text);
+//                }
             }
 
             @Override
-            public void keyPressed(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    String query = completion.getText();
-                    executeQuery(mDatabase, query);
+            public void documentChanged(DocumentEvent event) {
+                String text = event.getDocument().getText();
+                text = text.replaceAll(mDatabase.getName() + "> ", "");
+                if (text.endsWith(";")) {
+                    executeQuery(mDatabase, text);
+//                    event.getDocument().setText(mDatabase.getName() + "> ");
                 }
             }
         });
+        completion.setText(mDatabase.getName() + "> ");
         return completion;
     }
+class MyDocumentListener implements DocumentListener {
 
+}
     private void populateDatabase() {
         socket.requestDbDetails();
         DataObserver.getInstance().subscribe(listener);
@@ -239,7 +253,7 @@ public class SessionWindow {
 
         jRightContainer.removeAll();
 
-        jRightContainer.add(tableDetails, BorderLayout.CENTER);
+        jRightContainer.add(new JScrollPane(tableDetails), BorderLayout.CENTER);
         jRightContainer.repaint();
         jRightContainer.revalidate();
     }

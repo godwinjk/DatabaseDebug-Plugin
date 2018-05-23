@@ -3,6 +3,7 @@ package com.godwin.debug.ui.autocomplete;
 import com.godwin.debug.model.DDatabase;
 import com.godwin.debug.model.DTable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -86,7 +87,8 @@ public class QuerySuggestionService implements AutoCompletionService {
     }
 
     public static List<String> getDbTokensAsList(DDatabase database) {
-        List<String> list = Arrays.asList(getBasicQueryCommands());
+        List<String> list = new ArrayList<>(Arrays.asList(getBasicQueryCommands()));
+
         if (null != database) {
             list.add(database.getName());
             if (database.getTables() != null) {

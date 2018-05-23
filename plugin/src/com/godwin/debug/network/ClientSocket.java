@@ -108,7 +108,7 @@ public class ClientSocket {
      */
     public void requestAppDetails() {
         String string = CommunicationService.getRequestService().getDeviceDetails();
-        socket.send(string);
+        send(string);
     }
 
     /**
@@ -116,7 +116,7 @@ public class ClientSocket {
      */
     public void requestDbDetails() {
         String string = CommunicationService.getRequestService().getDbRequest();
-        socket.send(string);
+        send(string);
     }
 
     /**
@@ -126,12 +126,18 @@ public class ClientSocket {
      */
     public void requestTableDetails(DTable table) {
         String string = CommunicationService.getRequestService().getTableDetailsRequest(table);
-        socket.send(string);
+        send(string);
     }
 
     public void executeQuery(DDatabase database, String query) {
         String string = CommunicationService.getRequestService().getExecuteQueryRequest(database, query);
-        socket.send(string);
+        send(string);
+    }
+
+    private void send(String string) {
+        if (socket.isOpen()) {
+            socket.send(string);
+        }
     }
 
     /**
