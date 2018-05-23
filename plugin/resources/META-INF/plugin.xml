@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>com.your.company.unique.plugin.id</id>
-    <name>Plugin display name here</name>
+    <id>com.godwin.db.debugger</id>
+    <name>Debugger</name>
     <version>1.0</version>
     <vendor email="godwinjoseph.k@gmail.com">Godwin</vendor>
 

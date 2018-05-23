@@ -11,10 +11,12 @@ import org.jetbrains.annotations.NotNull;
  * @author : Godwin Joseph Kurinjikattu
  */
 public class DebugToolWindowFactory implements ToolWindowFactory {
-    public static final String TOOL_WINDOW_ID = "Json Parser";
+    public static final String TOOL_WINDOW_ID = "Debug Database";
 
     @Override
     public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-
+        DebugComponent apiDebuggerView = DebugComponent.getInstance(project);
+        apiDebuggerView.initParser(toolWindow);
     }
+
 }

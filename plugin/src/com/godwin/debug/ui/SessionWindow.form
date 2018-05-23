@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.godwin.debug.ui.SessionWindow">
+  <grid id="27dc6" binding="container" layout-manager="CardLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <splitpane id="99a85" binding="jSplitPane">
+        <constraints>
+          <card name="Card1"/>
+        </constraints>
+        <properties>
+          <orientation value="1"/>
+          <resizeWeight value="0.8"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <scrollpane id="30fe9" binding="jScrollTree">
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="427d1" class="javax.swing.JTree" binding="tableTree">
+                <constraints/>
+                <properties>
+                  <enabled value="true"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+          <scrollpane id="6e6a2" binding="jScrollTable">
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <grid id="d619f" binding="jRightContainer" layout-manager="CardLayout" hgap="0" vgap="0">
+                <constraints/>
+                <properties>
+                  <preferredSize width="400" height="200"/>
+                </properties>
+                <border type="none"/>
+                <children/>
+              </grid>
+            </children>
+          </scrollpane>
+        </children>
+      </splitpane>
+    </children>
+  </grid>
+  <inspectionSuppressions>
+    <suppress inspection="NoLabelFor" id="6e6a2"/>
+  </inspectionSuppressions>
+</form>
