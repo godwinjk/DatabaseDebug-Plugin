@@ -10,6 +10,8 @@ Database Debugger is a debug bridge for Android applications. When enabled, deve
 3. Search **Database Debugger**
 4. Install and restart Android Studio
 
+Or you can find the file from https://plugins.jetbrains.com/plugin/10766-database-debugger
+
 Now you will see a tool window on right tool panel called **Database Debugger**.
 
 #### In application
